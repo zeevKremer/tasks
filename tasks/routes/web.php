@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\addController;
+use App\Http\Controllers\add;
+use App\Http\Controllers\update;
+use App\Http\Controllers\delete;
+use App\Http\Controllers\index;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +18,7 @@ use app\Http\Controllers\addController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::view("add", 'add');
-Route::view("update", 'update');
-Route::view("delete", 'delete');
+Route::get('/', [index::class,'getData']);
+Route::get('add', [add::class,'addTask']);
+Route::get('update', [update::class,'upTask']);
+Route::get('delete', [delete::class,'delete']);
