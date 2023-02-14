@@ -10,9 +10,18 @@ $sql = "update  tasks set isActive = 0 where taskId = ".$id;
 mysqli_query($connection,$sql);
 mysqli_close($connection);    
 ?>
-<center>
-    <style>
-        body
+<!DOCTYPE html>
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+                body
     {
         direction:rtl;
         background:#b8cef6;
@@ -35,11 +44,14 @@ mysqli_close($connection);
         color: #00ff21;
         text-decoration: none;
     }
-    </style>
-    <br><br>
-    <h1>המשימה נמחקה בהצלחה</h1>
-    <br><br>
-    <a href="index.php">חזרה לדף המשימות</a>
-</center>
-
-<?php /**PATH C:\xampp\htdocs\tasks1\resources\views/delete.blade.php ENDPATH**/ ?>
+        </style>
+      
+</head>      
+<body class="antialiased">      
+    <center>
+        <br><br>
+        <h1>המשימה נמחקה בהצלחה</h1>
+        <br><br>
+        <a href="index.php">חזרה לדף המשימות</a>
+    </center>
+</body<?php /**PATH C:\xampp\htdocs\tasks1\resources\views/delete.blade.php ENDPATH**/ ?>

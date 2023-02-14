@@ -1,25 +1,8 @@
 <?php
-//קבועים להתקשרות עם בסיס הנתונים
-defined('DB_HOST')? null : define('DB_HOST', 'localhost');
-defined('DB_USER')? null : define('DB_USER', 'root');
-defined('DB_PASS')? null : define('DB_PASS', '');
-defined('DB_NAME')? null : define('DB_NAME', 'dbtasks');
-$connection = mysqli_connect(DB_HOST ,DB_USER ,DB_PASS ,DB_NAME);
+
 $id = $_GET["update"];
 $Desc = $_GET["Desc"];
 $Execution = $_GET["Execution"];
-if( isset($_GET['textarea1']) )
-{
-   
-    
-    $textarea1 = $_GET["textarea1"];    
-    $sql = "update  tasks set taskDesc = " .$textarea1 . " , isExecution = " .$Execution . " where taskId = ".$id;
-    mysqli_query($connection,$sql);
-    mysqli_close($connection);
-}
-    
-
-
 ?>
 <center>
 <style>
@@ -55,9 +38,10 @@ if( isset($_GET['textarea1']) )
     }
 
 </style>
-<form action="index.php" method="get">
+<form action="update" method="GET">
     <input hidden name='id' value=<?php echo $id?>></input>
     <h1>תיאור המשימה</h1>
+    <br>    
     <br>
     <textarea rows="10" cols="50" name="textarea1" > <?php echo $Desc; ?> </textarea><br><br>
     <?php if($Execution == "yes" )
