@@ -14,19 +14,19 @@ class update extends Controller
     }
     public function upTask(Request $req)
     {
-        if($req -> textarea1 != "")
+               
+        if($req -> textarea1 != "" )
         {
-            //$req->validate(['textarea1'=>'required','update'=>'required']);
-            $textarea1 = $req -> textarea1;
+           
+           $textarea1 = $req -> textarea1;
             $Execution = $req -> Execution; 
             $id = $req -> id;                                 
-            DB::update('update tasks set taskDesc = ?,isExecution = ? where taskId = ?',[$textarea1, $Execution,$id]);
+            DB::update('update tasks set taskDesc = ?,isExecution = ? where id = ?',[$textarea1, $Execution,$id]);
             return redirect ('/');
-        }
+        }        
         else
         {
             return view('update');
-        }
-//        
+        }       
     }
 }

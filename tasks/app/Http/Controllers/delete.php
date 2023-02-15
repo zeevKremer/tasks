@@ -17,7 +17,7 @@ class delete extends Controller
         if($req -> delete != "")
         {
             $id = $req -> delete;
-            DB::update('update tasks set isActive = ? where taskId = ?',[0,$id]);
+            DB::update('update tasks set isActive = ? where id = ?',[0,$id]);
         }
 
         return redirect('/');
