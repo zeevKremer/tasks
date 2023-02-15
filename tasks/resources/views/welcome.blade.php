@@ -35,8 +35,8 @@
             else if($item['isExecution']=="yes")
                 echo "<td class='yes'></td>";
         ?>
-        <td> <form  action="update" method="GET" ><input hidden name="update" value="{{$item['taskId']}}"></input><input hidden name="Desc" value="{{$item['taskDesc']}}"></input><input hidden name="Execution" value="{{$item['isExecution']}}"></input><input class="btn" type="submit" name="button1" value="עריכה"></input></form></td>
-        <td> <form  action="delete" method="GET"   ><input hidden name="delete" value="{{$item['taskId']}}"></input><input class="btn" type="submit" name="button1" value="מחיקה"></input></form></td></tr>
+        <td> <form  action="update" method="GET" ><input hidden name="id" value="{{$item['id']}}"></input><input hidden name="Desc" value="{{$item['taskDesc']}}"></input><input hidden name="Execution" value="{{$item['isExecution']}}"></input><input class="btn" type="submit" name="button1" value="עריכה"></input></form></td>
+        <td> <form  action="delete" method="GET"   ><input hidden name="delete" value="{{$item['id']}}"></input><input class="btn" type="submit" name="button1" value="מחיקה"></input></form></td></tr>
     </tr>
     @endforeach       
 </table><br>

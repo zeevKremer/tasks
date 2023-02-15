@@ -1,6 +1,6 @@
 <?php
 
-$id = $_GET["update"];
+$id = $_GET["id"];
 $Desc = $_GET["Desc"];
 $Execution = $_GET["Execution"];
 ?>
@@ -40,6 +40,7 @@ $Execution = $_GET["Execution"];
 </style>
 <form action="update" method="GET">
     <input hidden name='id' value=<?php echo $id?>></input>
+    <input hidden name='into' value='1'></input>
     <h1>תיאור המשימה</h1>
     <br>    
     <br>
